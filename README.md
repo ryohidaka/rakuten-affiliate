@@ -1,22 +1,20 @@
-# npm-package-template
+# rakuten-affiliate
 
-[![NPM Version](https://img.shields.io/npm/v/npm-package-template?logo=npm)](https://www.npmjs.com/package/npm-package-template)
-![build](https://github.com/ryohidaka/npm-package-template/workflows/Build/badge.svg)
-[![codecov](https://codecov.io/gh/ryohidaka/npm-package-template/graph/badge.svg?token=RHP9TB2F51)](https://codecov.io/gh/ryohidaka/npm-package-template)
+[![NPM Version](https://img.shields.io/npm/v/rakuten-affiliate?logo=npm)](https://www.npmjs.com/package/rakuten-affiliate)
+![build](https://github.com/ryohidaka/rakuten-affiliate/workflows/Build/badge.svg)
+[![codecov](https://codecov.io/gh/ryohidaka/rakuten-affiliate/graph/badge.svg?token=RHP9TB2F51)](https://codecov.io/gh/ryohidaka/rakuten-affiliate)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-
-[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/B0B6TVH92)
 
 ## Overview
 
-Minimum configuration template for publishing packages to npm.
+楽天アフィリエイトのリンクを生成するNode.jsライブラリ
 
 ## Installation
 
 You can install this library using npm:
 
 ```shell
-npm install npm-package-template
+npm install rakuten-affiliate
 ```
 
 ## Functions
@@ -34,7 +32,7 @@ npm install npm-package-template
 ## Usage Example
 
 ```ts
-import {} from "npm-package-template";
+import {} from "rakuten-affiliate";
 ```
 
 ## Link
