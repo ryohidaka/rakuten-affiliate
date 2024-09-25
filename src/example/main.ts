@@ -13,8 +13,20 @@ const params: RakutenAffiliateParams = {
 
 // RakutenAffiliateクラスのインスタンスを生成
 const client = new RakutenAffiliate(params);
-console.log(client);
+
+// 商品ページURL
+const pageURL = env.VITE_PAGE_URL;
+// トークン
+const token = env.VITE_TOKEN;
+
+// 商品のアフィリエイトリンクを取得
+const itemURL = client.getItemURL(pageURL, token);
 
 document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
-  <div></div>
+  <div>
+    <section>
+      <h3>商品URL</h3>
+      <a href="${itemURL}" target="_blank" rel="noopener noreferrer">${itemURL}</a>
+    </section>
+  </div>
 `;
