@@ -1,6 +1,6 @@
 {
   "name": "rakuten-affiliate",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "楽天アフィリエイトのリンクを生成するNode.jsライブラリ",
   "keywords": [],
   "type": "module",
