@@ -17,10 +17,11 @@ npm install rakuten-affiliate
 
 ## パラメータ
 
-| Parameter       | Type   | Description       | Example                               |
-| --------------- | ------ | ----------------- | ------------------------------------- |
-| `affiliateId`   | string | アフィリエイト ID | `aaaaaaaa.bbbbbbbb.cccccccc.dddddddd` |
-| `measurementId` | string | 計測 ID           | `_RTLinkXXXXX`                        |
+| Parameter                | Type   | Description                            | Example                               |
+| ------------------------ | ------ | -------------------------------------- | ------------------------------------- |
+| `affiliateId`            | string | アフィリエイト ID                      | `aaaaaaaa.bbbbbbbb.cccccccc.dddddddd` |
+| `affiliateIdForNaviLink` | string | アフィリエイトID(商品価格ナビリンク用) | `aaaaaaaa.bbbbbbbb.cccccccc.dddddddd` |
+| `measurementId`          | string | 計測 ID                                | `_RTLinkXXXXX`                        |
 
 ## 関数一覧
 
@@ -41,13 +42,32 @@ npm install rakuten-affiliate
 
 - `string`: アフィリエイトリンク
 
+### `getNaviLinkURL(pageURL: string, token?: string): string`
+
+商品価格ナビリンクのURLからアフィリエイトリンクを生成し返却する
+
+#### パラメータ
+
+| Parameter | Type                | Description          | Example                           |
+| --------- | ------------------- | -------------------- | --------------------------------- |
+| `pageURL` | string              | 商品ページの URL     | `https://item.rakuten.co.jp/XXX/` |
+| `token`   | string \| undefined | トークン文字列(任意) |                                   |
+
+#### レスポンス
+
+- `string`: アフィリエイトリンク
+
 ## 使用例
 
 ```ts
 import { RakutenAffiliate } from "rakuten-affiliate";
 
 const params = {
+  // アフィリエイトID
   affiliateId: "aaaaaaaa.bbbbbbbb.cccccccc.dddddddd",
+  // アフィリエイトID(商品価格ナビリンク用)
+  affiliateIdForNaviLink: "aaaaaaaa.bbbbbbbb.cccccccc.dddddddd",
+  // 計測ID
   measurementId: "_RTLinkXXXXX",
 };
 
@@ -59,6 +79,12 @@ const pageURL = "https://item.rakuten.co.jp/XXX";
 
 // 商品のアフィリエイトリンクを取得
 const itemURL = client.getItemURL(pageURL);
+
+// 商品価格ナビリンクのURL
+const navLinkPageURL = "https://product.rakuten.co.jp/product/-/XXX/";
+
+// 商品価格ナビリンクのアフィリエイトリンクを取得
+const navLinkURL = client.getNaviLinkURL(navLinkPageURL);
 ```
 
 ## Link
